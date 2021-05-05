@@ -3,6 +3,5 @@
         "name":"niloy",
         "product":"Product",
         "checkout":"Checkout",
-        "payment":"Payment",
-        "Lang":"Language"
+        "payment":"Payment"
 }
