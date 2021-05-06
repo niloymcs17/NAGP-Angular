@@ -11,6 +11,10 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -27,8 +31,12 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
     MatButtonModule,
+    MatSidenavModule,
     FormsModule,
+    MatToolbarModule,
     ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
@@ -36,7 +44,7 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: createTranslateLoader,
         deps: [HttpClient]
       },
-      // defaultLanguage:'en'
+      defaultLanguage:'en'
     }),
     BrowserAnimationsModule
   ],

@@ -1,7 +1,6 @@
 {
-        "tile":"App works",
-        "name":"niloy",
         "product":"Product",
         "checkout":"Checkout",
-        "payment":"Payment"
+        "payment":"Payment",
+        "LANGdd":"Language"
 }

@@ -13,14 +13,14 @@ export class AppComponent {
   langChange = new FormControl('en', Validators.required);
   lang = [
     {value: 'en', viewValue: 'English'},
-    {value: 'ba', viewValue: 'bengali'},
+    {value: 'ba', viewValue: 'Bengali'}
   ];
   constructor(private translate: TranslateService , private customLang:CustomtranslateService){
-    this.translate.setDefaultLang('en');
     this.langChange.valueChanges.subscribe(value => {
       console.log(value);
       this.customLang.changeLang(value);
     });
   }
 
+  
 }

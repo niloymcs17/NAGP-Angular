@@ -1,19 +1,39 @@
-<h1>{{'tile' | translate}}</h1>
-<section>
-  <div class="example-button-row">
-    <button [routerLink]="['/product']" mat-raised-button color="primary">{{'product' | translate}}</button>
-    <button [routerLink]="['/checkout']" mat-raised-button color="accent">{{'checkout' | translate}}</button>
-    <button [routerLink]="['/payment']" mat-raised-button >{{'payment' | translate}}</button>
-
-  </div>
-</section>
-<mat-form-field >
-  <mat-label>{{'Lang' | translate}}</mat-label>
-  <mat-select  [formControl]="langChange"> >
-    <mat-option *ngFor="let food of lang" [value]="food.value">
-      {{food.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-
-<router-outlet></router-outlet>
+<p>
+  <mat-toolbar color="primary">
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+<mat-drawer-container class="container" [hasBackdrop]="true">
+  <mat-drawer #drawer [mode]="'over'">I'm a drawer</mat-drawer>
+  <mat-drawer-content>
+   
+    <section>
+      <div class="example-button-row">
+        <button [routerLink]="['/product']" mat-raised-button color="primary">{{'product' | translate}}</button>
+        <button [routerLink]="['/checkout']" mat-raised-button color="accent">{{'checkout' | translate}}</button>
+        <button [routerLink]="['/payment']" mat-raised-button>{{'payment' | translate}}</button>
+    
+      </div>
+    </section>
+    <mat-form-field>
+      <mat-label>{{'LANGdd' | translate}}</mat-label>
+      <mat-select [formControl]="langChange"> 
+        <mat-option *ngFor="let food of lang" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
