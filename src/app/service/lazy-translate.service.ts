@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CustomtranslateService {
+export class LazyTranslateService {
 
   language = new BehaviorSubject<string>('en');
 

@@ -5,7 +5,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomtranslateService } from './customtranslate.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -15,6 +14,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { LazyTranslateService } from './service/lazy-translate.service';
+import { LoginComponent } from './login/login.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -23,7 +24,8 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     BrowserAnimationsModule
   ],
-  providers: [CustomtranslateService],
+  providers: [LazyTranslateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

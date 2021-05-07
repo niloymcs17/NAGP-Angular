@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CartRoutingModule } from './cart-routing.module';
+import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LazyTranslateService } from '../service/lazy-translate.service';
 
-import { CheckoutRoutingModule } from './checkout-routing.module';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { CustomtranslateService } from '../customtranslate.service';
 export function checkoutTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/checkout/', '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/cart/', '.json');
 }
 
 @NgModule({
   declarations: [
-    CheckoutComponent
+    CartComponent,
+    PaymentComponent
   ],
   imports: [
     CommonModule,
-    CheckoutRoutingModule,
+    CartRoutingModule,
     HttpClientModule,
     TranslateModule.forChild({
       loader: {
@@ -29,8 +31,8 @@ export function checkoutTranslateLoader(http: HttpClient) {
     })
   ]
 })
-export class CheckoutModule {
-  constructor(private langservice: TranslateService , private customLag:CustomtranslateService) {
+export class CartModule {
+  constructor(private langservice: TranslateService, private customLag: LazyTranslateService) {
     this.customLag.language.subscribe(value => this.langservice.use(value));
-   }
- }
+  }
+}

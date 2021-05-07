@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { CustomtranslateService } from './customtranslate.service';
+import { LazyTranslateService } from './service/lazy-translate.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,12 @@ import { CustomtranslateService } from './customtranslate.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ecommerce';
   langChange = new FormControl('en', Validators.required);
   lang = [
     {value: 'en', viewValue: 'English'},
     {value: 'ba', viewValue: 'Bengali'}
   ];
-  constructor(private translate: TranslateService , private customLang:CustomtranslateService){
+  constructor(private translate: TranslateService , private customLang:LazyTranslateService){
     this.langChange.valueChanges.subscribe(value => {
       console.log(value);
       this.customLang.changeLang(value);

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: 'product' , loadChildren:() => import('./product/product.module').then(m => m.ProductModule) },
-  { path: 'checkout' , loadChildren:() => import('./checkout/checkout.module').then(m => m.CheckoutModule) },
-  { path: 'payment' , loadChildren:() => import('./payment/payment.module').then(m => m.PaymentModule) },
+  { path: 'cart' , loadChildren:() => import('./cart/cart.module').then(m => m.CartModule) },
+  { path: 'login' , component: LoginComponent },
 
 ];
 
