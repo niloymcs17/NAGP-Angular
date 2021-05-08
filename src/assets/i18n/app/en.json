@@ -1,6 +1,10 @@
 {
         "product":"Product",
-        "checkout":"Checkout",
-        "payment":"Payment",
-        "LANGdd":"Language"
+        "LANGdd":"Language",
+        "user":"User Name",
+        "signin":"Sign In",
+        "pass":"Password",
+        "ecommerce":"E-Commerce",
+        "productList":"Product List",
+        "logout":"Log Out"
 }

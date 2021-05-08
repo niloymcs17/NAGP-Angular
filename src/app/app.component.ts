@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
+import {  FormControl, Validators } from '@angular/forms';
 import { LazyTranslateService } from './service/lazy-translate.service';
 
 @Component({
@@ -14,7 +13,9 @@ export class AppComponent {
     {value: 'en', viewValue: 'English'},
     {value: 'ba', viewValue: 'Bengali'}
   ];
-  constructor(private translate: TranslateService , private customLang:LazyTranslateService){
+
+  
+  constructor( private customLang:LazyTranslateService ){
     this.langChange.valueChanges.subscribe(value => {
       console.log(value);
       this.customLang.changeLang(value);
