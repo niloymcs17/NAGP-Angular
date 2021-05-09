@@ -96,7 +96,7 @@ productList = [
     "Id": "vogueandcode-pretty-girls-code-tee",
     "Maker": "vogueandcode",
     "Title": "Pretty Girls Code Tee",
-    "Description": "Everyone\u2019s favorite design is finally here on a tee! The Pretty Girls Code crew-neck tee is available in a soft pink with red writing.",
+    "Description": "Everyone's favorite design is finally here on a tee! The Pretty Girls Code crew-neck tee is available in a soft pink with red writing.",
     "price":213
 
   },
@@ -112,7 +112,7 @@ productList = [
     "Id": "selinazawacki-moon",
     "Maker": "selinazawacki",
     "Title": "Holographic Dark Moon Necklace",
-    "Description": "Not sure if I\u0027ll be making more, get it while I have it in the store.",
+    "Description": "Not sure if I'll be making more, get it while I have it in the store.",
     "price":213
 
   },
