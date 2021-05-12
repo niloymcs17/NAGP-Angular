@@ -11,15 +11,19 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import {MatCardModule} from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { ProductDetailViewComponent } from './product-detail-view/product-detail-view.component';
+import { ProductNotFoundComponent } from './product-not-found/product-not-found.component';
 
-export function checkoutTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/cart/', '.json');
+export function productTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/product/', '.json');
 }
 
 @NgModule({
   declarations: [
     ProductListComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductDetailViewComponent,
+    ProductNotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,7 @@ export function checkoutTranslateLoader(http: HttpClient) {
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
-        useFactory: checkoutTranslateLoader,
+        useFactory: productTranslateLoader,
         deps: [HttpClient]
       },
       isolate: true,

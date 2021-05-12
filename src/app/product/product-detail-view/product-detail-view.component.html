@@ -1,0 +1,22 @@
+<div class="grid-container">
+    <mat-card class="card">
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    </mat-card>
+    <div>
+        <strong>
+            {{product?.Title}}
+        </strong>
+        <p>
+            {{product?.Description}}
+        </p>
+        <p>
+            <strong>{{'price' | translate}} </strong>
+            <span class="blue">{{product?.price}}</span>
+        </p>
+        <p>
+            <strong>{{'seller' | translate}} : </strong> {{product?.Maker}}
+        </p>
+        <button mat-raised-button color="warn" (click)="addToCart()" type="submit">{{'add_to_card' |
+            translate}}</button>
+    </div>
+</div>
