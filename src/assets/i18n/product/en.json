@@ -1,5 +1,6 @@
 {
     "price":"Price: ₹",
     "add_to_card":"Add To Cart",
-    "seller":"Seller"
+    "seller":"Seller",
+    "404_product":"404: Product not Found!!"
 }
