@@ -4,5 +4,8 @@
         "title":"Name",
         "quantity": "Quantity",
         "delete":"Delete Item",
-        "proceed":"Proceed to Pay"
+        "place_order":"Place Order",
+        "proceed":"Proceed to Pay",
+        "fname":"First Name",
+        "lastName":"Last Name"
 }

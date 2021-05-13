@@ -1,1 +1,45 @@
-<p>payment works!</p>
+<form [formGroup]="profileForm">
+
+    <mat-form-field>
+        <mat-label>{{'fname' | translate}}</mat-label>
+        <input type="text" matInput formControlName="firstName" autocomplete="off">
+        <mat-error>
+            {{findError('firstName')}}
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>{{'lastName' | translate}}</mat-label>
+        <input type="text" autocomplete="off" matInput formControlName="lastName">
+        <mat-error>
+            {{findError('lastName')}}
+        </mat-error>
+    </mat-form-field>
+
+    <div formGroupName="address">
+        <h3>Address</h3>
+
+        <label>
+            Street:
+            <input type="text" formControlName="street">
+        </label>
+
+        <label>
+            City:
+            <input type="text" formControlName="city">
+        </label>
+
+        <label>
+            State:
+            <input type="text" formControlName="state">
+        </label>
+
+        <label>
+            Zip Code:
+            <input type="numer" formControlName="pin">
+        </label>
+    </div>
+    <button mat-raised-button color="accent">{{'place_order' | translate}}</button>
+</form>
+
+
+{{profileForm.value | json}}
