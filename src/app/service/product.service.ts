@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 export interface Products {
   Id: number,
@@ -11,6 +12,7 @@ export interface Products {
   providedIn: 'root'
 })
 export class ProductService {
+  
   productList:Products[] = [
     {
       "Id": 1,
@@ -133,6 +135,8 @@ export class ProductService {
     }
   ];
 
+  cartCount = new BehaviorSubject(0);
+  cartMap = new Map<Products,number>();
   constructor() { }
 
   getProductById(id: number) {
@@ -141,5 +145,24 @@ export class ProductService {
 
   getProductByName(title: string) {
     return this.productList.filter(x => x.Title == title);
+  }
+
+  updateCart(product: Products , quantity: number) {
+    const value = this.cartMap.get(product) ;
+    if( value ) {
+      this.cartMap.set(product , quantity + value );
+    } else {
+      this.cartMap.set(product , quantity );
+    }
+
+    this.cartCount.next(this.cartMap.size);
+  }
+
+  removeItem(id:number) {
+    const temp = this.productList.find(m => m.Id == id);
+    if(temp){
+      this.cartMap.delete(temp);
+      this.cartCount.next(this.cartMap.size);
+    }
   }
 }

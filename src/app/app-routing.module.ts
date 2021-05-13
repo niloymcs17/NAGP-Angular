@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: 'product' , loadChildren:() => import('./product/product.module').then(m => m.ProductModule) },
   { path: 'cart' , loadChildren:() => import('./cart/cart.module').then(m => m.CartModule) },
   { path: 'login' , component: LoginComponent },
-  { path: '**' , redirectTo:'login' },
+  // { path: '**' , redirectTo:'login' },
 ];
 
 @NgModule({

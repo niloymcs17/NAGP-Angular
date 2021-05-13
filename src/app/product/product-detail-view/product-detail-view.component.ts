@@ -21,6 +21,6 @@ export class ProductDetailViewComponent implements OnInit {
   }
 
   addToCart(){
-
+    this.productService.updateCart(this.product , 1);
   }
 }

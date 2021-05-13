@@ -1,9 +1,6 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
 
   .container {
-    width: 98vw;
+    width: 100vw;
     height: calc(100vh - 80px);
   }
   
@@ -18,3 +15,17 @@
     font-size: 12px;
     width: 100px;
   }
+
+   a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    background-color: red;
+  }
+  

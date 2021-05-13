@@ -16,6 +16,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { LazyTranslateService } from './service/lazy-translate.service';
 import { LoginComponent } from './login/login.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -33,6 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatBadgeModule,
     MatInputModule,
     MatIconModule,
     MatButtonModule,

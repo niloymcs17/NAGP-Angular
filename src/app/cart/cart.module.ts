@@ -7,6 +7,11 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LazyTranslateService } from '../service/lazy-translate.service';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 export function checkoutTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/cart/', '.json');
@@ -21,6 +26,11 @@ export function checkoutTranslateLoader(http: HttpClient) {
     CommonModule,
     CartRoutingModule,
     HttpClientModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatPaginatorModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

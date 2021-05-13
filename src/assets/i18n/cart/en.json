@@ -1,3 +1,8 @@
 {
-        "title":"checkout works!"
+        "total_price":"Total Price",
+        "price":"Price",
+        "title":"Name",
+        "quantity": "Quantity",
+        "delete":"Delete Item",
+        "proceed":"Proceed to Pay"
 }

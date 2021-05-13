@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  FormControl, Validators } from '@angular/forms';
 import { LazyTranslateService } from './service/lazy-translate.service';
+import { ProductService } from './service/product.service';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +14,21 @@ export class AppComponent {
     {value: 'en', viewValue: 'English'},
     {value: 'ba', viewValue: 'Bengali'}
   ];
-
+  cartSize = 0;
   
-  constructor( private customLang:LazyTranslateService ){
+  constructor( private customLang:LazyTranslateService ,private productService : ProductService ){
     this.langChange.valueChanges.subscribe(value => {
       console.log(value);
       this.customLang.changeLang(value);
     });
+
+    this.productService.cartCount.subscribe( value =>
+      {
+        this.cartSize = value;
+      });
   }
+
+  
 
   
 }

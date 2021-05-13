@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Products, ProductService } from 'src/app/service/product.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['title', 'quantity', 'price', 'total' , 'delete'];
+  dataSource = new MatTableDataSource<any>();
+
+  totalCartprice = 0;
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.productService.cartMap.forEach((value: number, key: Products) => {
+      const item = {
+        id: key.Id,
+        title: key.Title,
+        quantity: value,
+        price: key.price,
+        total: key.price * value
+      }
+      this.totalCartprice += item.total;
+      this.dataSource.data.push(item);
+    });
+  }
+
+  remove(item : any){
+    this.dataSource.data = this.dataSource.data.filter( v => v != item);
+    this.productService.removeItem(item.id);
+  }
+
+  payment(){
+
   }
 
 }
