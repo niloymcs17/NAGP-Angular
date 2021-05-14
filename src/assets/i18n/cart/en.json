@@ -1,15 +1,26 @@
 {
-        "total_price":"Total Price",
-        "price":"Price",
-        "title":"Name",
+        "total_price": "Total Price",
+        "price": "Price",
+        "title": "Name",
         "quantity": "Quantity",
-        "delete":"Delete Item",
-        "place_order":"Place Order",
-        "proceed":"Proceed to Pay",
-        "fname":"First Name",
-        "lastName":"Last Name",
-        "street":"Street address",
-        "city":"City",
-        "state":"state",
-        "pin":"Pin Code"
+        "delete": "Delete Item",
+        "place_order": "Place Order",
+        "proceed": "Proceed to Pay",
+        "fname": "First Name",
+        "lastName": "Last Name",
+        "street": "Street address",
+        "city": "City",
+        "state": "state",
+        "pin": "Pin Code",
+        "empty_cart": "Your cart is empty!",
+        "your_details": "Your personal details:",
+        "address": "Your Address:",
+        "email": "Your Email",
+        "phone": "Phone No.",
+        "ERROR": {
+                "phone": "Enter 10 digit Phone no !",
+                "email": "Enter Valid Email!",
+                "pin": "Enter 6 digit Pin code!",
+                "required":"Input is required!"
+        }
 }

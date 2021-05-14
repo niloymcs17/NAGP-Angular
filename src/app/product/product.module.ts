@@ -8,11 +8,12 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LazyTranslateService } from '../service/lazy-translate.service';
 import { ProductCardComponent } from './product-card/product-card.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ProductDetailViewComponent } from './product-detail-view/product-detail-view.component';
 import { ProductNotFoundComponent } from './product-not-found/product-not-found.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 export function productTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/product/', '.json');
@@ -32,6 +33,7 @@ export function productTranslateLoader(http: HttpClient) {
     MatCardModule,
     MatIconModule,
     MatButtonModule,
+    MatSnackBarModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

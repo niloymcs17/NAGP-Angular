@@ -16,31 +16,45 @@ body {
     flex-direction: column;
 }
 
-.margin-5{
+.margin-5 {
     margin: 5px !important;
 }
 
-.padding-10{
+.padding-10 {
     padding: 10px;
 }
 
-.blue{
+.blue {
     color: #4285F4;
 }
 
-.green{
+.green {
     color: #0F9D58;
 }
 
-.red{
+.red {
     color: #DB4437;
+}
+
+.yellow {
+    color: #F4B400;
 }
 
 .example-spacer {
     flex: 1 1 auto;
-  }
+}
 
 
-  .mat-form-field {
-      margin: 10px;
-  }
+.mat-form-field {
+    margin: 10px;
+}
+
+.snackbar {
+    position: fixed;
+    top: 60px;
+    right: 5px;
+}
+
+.large {
+    font-size: 40px;
+}

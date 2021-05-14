@@ -34,10 +34,11 @@ export class CartComponent implements OnInit {
   remove(item : any){
     this.dataSource.data = this.dataSource.data.filter( v => v != item);
     this.productService.removeItem(item.id);
+    this.totalCartprice -= item.total;
   }
 
   payment(){
-    this.router.navigate(['/cart/payment' , {  data: {  total: this.totalCartprice , orderID:'ODR2326934' } }])
+    this.router.navigate(['/cart/payment' , {    total: this.totalCartprice , orderID:'ODR2326934'  }])
   }
 
 }

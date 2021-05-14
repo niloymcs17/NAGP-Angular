@@ -1,4 +1,5 @@
 <form [formGroup]="profileForm">
+    <h3 class="yellow"><strong>{{'your_details' | translate}}</strong></h3>
 
     <mat-form-field>
         <mat-label>{{'fname' | translate}}</mat-label>
@@ -14,21 +15,35 @@
             {{findError('lastName')}}
         </mat-error>
     </mat-form-field>
+    <mat-form-field>
+        <mat-label>{{'email' | translate}}</mat-label>
+        <input type="email" autocomplete="off" matInput formControlName="email">
+        <mat-error>
+            {{findError('email')}}
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>{{'phone' | translate}}</mat-label>
+        <input type="number" autocomplete="off" matInput formControlName="phone">
+        <mat-error>
+            {{findError('phone')}}
+        </mat-error>
+    </mat-form-field>
 
     <div formGroupName="address">
-        <h3>Address</h3>
+        <h3 class="blue"><strong>{{'address' | translate}}</strong></h3>
         <mat-form-field>
             <mat-label>{{'street' | translate}}</mat-label>
             <input type="text" autocomplete="off" matInput formControlName="street">
             <mat-error>
-                {{findError('street')}}
+                {{findError('address.street')}}
             </mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label>{{'city' | translate}}</mat-label>
             <input type="text" autocomplete="off" matInput formControlName="city">
             <mat-error>
-                {{findError('city')}}
+                {{findError('address.city')}}
             </mat-error>
         </mat-form-field>
 
@@ -36,20 +51,17 @@
             <mat-label>{{'state' | translate}}</mat-label>
             <input type="text" autocomplete="off" matInput formControlName="state">
             <mat-error>
-                {{findError('state')}}
+                {{findError('address.state')}}
             </mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label>{{'pin' | translate}}</mat-label>
             <input type="number" autocomplete="off" matInput formControlName="pin">
             <mat-error>
-                {{findError('pin')}}
+                {{findError('address.pin')}}
             </mat-error>
         </mat-form-field>
 
     </div>
-    <button mat-raised-button color="accent">{{'place_order' | translate}} {{totalPrice}}</button>
+    <button mat-raised-button [disabled]="!profileForm.valid" color="accent">{{'place_order' | translate}} ₹{{totalPrice}}</button>
 </form>
-
-
-{{profileForm.value | json}}
