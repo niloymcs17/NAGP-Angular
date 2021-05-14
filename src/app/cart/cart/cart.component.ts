@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Products, ProductService } from 'src/app/service/product.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,7 @@ export class CartComponent implements OnInit {
 
   totalCartprice = 0;
 
-  constructor(private productService: ProductService) { }
+  constructor(private router: Router , private productService: ProductService) { }
 
   ngOnInit(): void {
     this.productService.cartMap.forEach((value: number, key: Products) => {
@@ -36,7 +37,7 @@ export class CartComponent implements OnInit {
   }
 
   payment(){
-
+    this.router.navigate(['/cart/payment' , {  data: {  total: this.totalCartprice , orderID:'ODR2326934' } }])
   }
 
 }

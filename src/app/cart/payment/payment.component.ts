@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class PaymentComponent implements OnInit {
 
   profileForm = new FormGroup({
-    firstName: new FormControl('' , Validators.required),
+    firstName: new FormControl('', Validators.required),
     lastName: new FormControl(''),
     address: new FormGroup({
       street: new FormControl('', Validators.required),
@@ -18,10 +19,22 @@ export class PaymentComponent implements OnInit {
       pin: new FormControl('', Validators.required)
     })
   });
-  
-  constructor() { }
+
+  totalPrice = 0;
+  order = ''
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    console.log(this.router.getCurrentNavigation()?.extras);
+    this.route.queryParams.subscribe(params => {
+      console.log("ROute param" , params);
+      this.totalPrice = params['total'] || 0;
+      this.order = params['orderID'] || '';
+      if (this.totalPrice == 0 || this.order == '') {
+        // this.router.navigate(['/cart']);
+      }
+    });
   }
 
   findError(value: string): string {

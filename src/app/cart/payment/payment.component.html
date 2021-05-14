@@ -17,28 +17,38 @@
 
     <div formGroupName="address">
         <h3>Address</h3>
+        <mat-form-field>
+            <mat-label>{{'street' | translate}}</mat-label>
+            <input type="text" autocomplete="off" matInput formControlName="street">
+            <mat-error>
+                {{findError('street')}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>{{'city' | translate}}</mat-label>
+            <input type="text" autocomplete="off" matInput formControlName="city">
+            <mat-error>
+                {{findError('city')}}
+            </mat-error>
+        </mat-form-field>
 
-        <label>
-            Street:
-            <input type="text" formControlName="street">
-        </label>
+        <mat-form-field>
+            <mat-label>{{'state' | translate}}</mat-label>
+            <input type="text" autocomplete="off" matInput formControlName="state">
+            <mat-error>
+                {{findError('state')}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>{{'pin' | translate}}</mat-label>
+            <input type="number" autocomplete="off" matInput formControlName="pin">
+            <mat-error>
+                {{findError('pin')}}
+            </mat-error>
+        </mat-form-field>
 
-        <label>
-            City:
-            <input type="text" formControlName="city">
-        </label>
-
-        <label>
-            State:
-            <input type="text" formControlName="state">
-        </label>
-
-        <label>
-            Zip Code:
-            <input type="numer" formControlName="pin">
-        </label>
     </div>
-    <button mat-raised-button color="accent">{{'place_order' | translate}}</button>
+    <button mat-raised-button color="accent">{{'place_order' | translate}} {{totalPrice}}</button>
 </form>
 
 

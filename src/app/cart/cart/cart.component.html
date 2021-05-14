@@ -30,4 +30,4 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<button mat-raised-button class="float-right" color="accent">{{'proceed'| translate}}</button>
+<button mat-raised-button class="float-right" (click)="payment()" color="accent">{{'proceed'| translate}}</button>
