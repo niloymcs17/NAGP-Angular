@@ -17,6 +17,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { LazyTranslateService } from './service/lazy-translate.service';
 import { LoginComponent } from './login/login.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { AuthGuard } from './service/auth.guard';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -52,7 +53,7 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     BrowserAnimationsModule
   ],
-  providers: [LazyTranslateService],
+  providers: [LazyTranslateService , AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

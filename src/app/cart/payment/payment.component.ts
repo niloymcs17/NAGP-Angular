@@ -51,4 +51,8 @@ export class PaymentComponent implements OnInit {
     }
   }
 
+  orderPlace(){
+    
+  }
+
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthGuard } from '../service/auth.guard';
 
 @Component({
   selector: 'app-login',
@@ -13,16 +14,23 @@ export class LoginComponent implements OnInit {
     pass: ['', Validators.required],
   });
 
-  constructor(private router:Router, private fb: FormBuilder) { }
+  loginError = false;
+
+  constructor(private router: Router, private fb: FormBuilder, private auth: AuthGuard) { }
 
   ngOnInit(): void {
   }
 
   login() {
-    if(this.profileForm.valid) {
-        this.router.navigate(['/product']);
+    const feilds = this.profileForm;
+    if (feilds.valid) {
+      if (this.auth.login(feilds.get('user')?.value, feilds.get('pass')?.value)) {
+        const url = localStorage.getItem('redirect');
+        url ? this.router.navigate([url]) : this.router.navigate(['/product']);
+      } else {
+        this.loginError = true;
+      }
     }
-    console.log("Login form validity",this.profileForm.valid);
   }
 
   findError(value: string): string {

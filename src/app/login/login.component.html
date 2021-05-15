@@ -1,3 +1,5 @@
+<h2>{{'login_page' | translate}}</h2>
+<span *ngIf="loginError">{{'login_error' | translate}}</span>
 <form [formGroup]="profileForm">
   <mat-form-field>
     <mat-label>{{'user' | translate}}</mat-label>
