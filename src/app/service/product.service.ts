@@ -144,7 +144,7 @@ export class ProductService {
   }
 
   getProductByName(title: string) {
-    return this.productList.filter(x => x.Title == title);
+    return this.productList.filter(x => x.Title.toLowerCase().includes(title.toLowerCase()));
   }
 
   updateCart(product: Products , quantity: number) {

@@ -1,6 +1,20 @@
 <mat-toolbar color="primary">
-  <a  [routerLink]="['/product']">{{'productList' | translate}}</a>
-  <a  [routerLink]="['/cart']">{{'cart' | translate}}</a>
+  <a [routerLink]="['/product']">
+    <mat-icon>home</mat-icon>
+    {{'productList' | translate}}
+  </a>
+  <a [routerLink]="['/cart']">
+    <mat-icon matBadge="{{cartSize}}" matBadgeColor="warn">shopping_cart</mat-icon>
+    <span>{{'cart' | translate}}</span>
+  </a>
+  <a *ngIf="loggedInUser != ''" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    <span>{{'logout' | translate}}</span>
+  </a>
+  <a *ngIf="loggedInUser == ''" [routerLink]="['/login']" >
+    <mat-icon>login</mat-icon>
+    <span>{{'signin' | translate}}</span>
+  </a>
   <span class="example-spacer"></span>
   <mat-form-field class="dropdown">
     <mat-label>{{'LANGdd' | translate}}</mat-label>
@@ -10,17 +24,9 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <button mat-icon-button [routerLink]="['/cart']"  >
-    <mat-icon matBadge="{{cartSize}}" matBadgeColor="warn">shopping_cart</mat-icon>
-  </button>
 </mat-toolbar>
 <mat-drawer-container class="container" [hasBackdrop]="true">
   <mat-drawer #drawer [mode]="'over'">
-    <div class="flex-column">
-      <button class="margin-5" [routerLink]="['/checkout']" mat-raised-button>{{'checkout' | translate}}</button>
-      <button class="margin-5"  mat-raised-button></button>
-      <button class="margin-5" mat-raised-button>{{'logout' | translate}}</button>
-    </div>
   </mat-drawer>
   <mat-drawer-content>
     <router-outlet></router-outlet>

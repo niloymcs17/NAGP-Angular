@@ -3,5 +3,8 @@
     "add_to_card":"Add To Cart",
     "seller":"Seller",
     "404_product":"404: Product not Found!!",
-    "product_added":"Product added to cart!"
+    "product_added":"Product added to cart!",
+    "bsearch":"Search",
+    "search":"Enter product name to search.",
+    "no_product":"Product you are looking for is not present!"
 }

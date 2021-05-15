@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -9,10 +10,16 @@ import { ProductService } from 'src/app/service/product.service';
 export class ProductListComponent implements OnInit {
 
   list :any;
+  searchText = new FormControl('');
+
   constructor(private productSerice: ProductService) { }
 
   ngOnInit(): void {
     this.list = this.productSerice.productList;
+  }
+
+  search(){
+    this.list = this.productSerice.getProductByName(this.searchText.value);
   }
 
 }

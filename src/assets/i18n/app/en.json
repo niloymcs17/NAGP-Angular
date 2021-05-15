@@ -7,7 +7,7 @@
         "ecommerce":"E-Commerce",
         "productList":"Product List",
         "logout":"Log Out",
-        "cart":"Shopping cart",
+        "cart":" Shopping cart",
         "login_page":"Enter username :'niloy' and password :'niloy' to login.",
         "login_error":"Username Password is incorrect!"
 }

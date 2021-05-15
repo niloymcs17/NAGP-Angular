@@ -25,8 +25,9 @@ export class LoginComponent implements OnInit {
     const feilds = this.profileForm;
     if (feilds.valid) {
       if (this.auth.login(feilds.get('user')?.value, feilds.get('pass')?.value)) {
-        const url = localStorage.getItem('redirect');
-        url ? this.router.navigate([url]) : this.router.navigate(['/product']);
+        // const url = localStorage.getItem('redirect');
+        // url ? this.router.navigate([url]) : this.router.navigate(['/product']);
+        this.router.navigate(['/product']);
       } else {
         this.loginError = true;
       }

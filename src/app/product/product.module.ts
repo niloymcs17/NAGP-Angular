@@ -14,6 +14,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { ProductDetailViewComponent } from './product-detail-view/product-detail-view.component';
 import { ProductNotFoundComponent } from './product-not-found/product-not-found.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 export function productTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/product/', '.json');
@@ -30,6 +33,10 @@ export function productTranslateLoader(http: HttpClient) {
     CommonModule,
     ProductRoutingModule,
     HttpClientModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
     MatCardModule,
     MatIconModule,
     MatButtonModule,
