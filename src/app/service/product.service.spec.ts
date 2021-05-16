@@ -74,4 +74,9 @@ describe('ProductService', () => {
     expect(service.cartMap.get(product)).toBe(2);
   });
 
+  it('cart should be empty "emptyCart"', () => {
+    service.emptyCart();
+    expect(service.cartMap.size).toBe(0);
+  });
+
 });

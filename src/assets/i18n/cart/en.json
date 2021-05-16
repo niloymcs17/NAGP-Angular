@@ -17,6 +17,7 @@
         "address": "Your Address:",
         "email": "Your Email",
         "phone": "Phone No.",
+        "order_placed":"Order confirmed , will be delivered soon!!",
         "ERROR": {
                 "phone": "Enter 10 digit Phone no !",
                 "email": "Enter Valid Email!",

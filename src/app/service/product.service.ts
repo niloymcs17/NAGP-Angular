@@ -165,4 +165,9 @@ export class ProductService {
       this.cartCount.next(this.cartMap.size);
     }
   }
+
+  emptyCart(){
+    this.cartMap.clear();
+    this.cartCount.next(0);
+  }
 }

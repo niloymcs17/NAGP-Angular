@@ -1,4 +1,4 @@
-<form [formGroup]="profileForm">
+<form *ngIf="!orderPlacedFlag" [formGroup]="profileForm">
     <h3 class="yellow"><strong>{{'your_details' | translate}}</strong></h3>
 
     <mat-form-field>
@@ -63,5 +63,9 @@
         </mat-form-field>
 
     </div>
-    <button mat-raised-button [disabled]="!profileForm.valid" color="accent">{{'place_order' | translate}} ₹{{totalPrice}}</button>
+    <button mat-raised-button (click)="orderPlaced()" [disabled]="!profileForm.valid" color="accent">{{'place_order' | translate}} ₹{{totalPrice}}</button>
 </form>
+
+<div *ngIf="orderPlacedFlag">
+    <strong>{{'order_placed' | translate}}</strong>
+</div>
